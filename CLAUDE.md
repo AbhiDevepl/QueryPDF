@@ -28,6 +28,23 @@ This file provides context about the project for AI assistants.
 
 - Database: mongodb
 - ORM: mongoose
+- Cache/Message Broker: redis (client: `redis` npm package for node, `redis-py` for python)
+
+### Vector Database
+
+- Database: chromadb (local persistent client, no external server required)
+- Storage: embedded inside python-ai/ with a `chroma_data/` persist directory
+
+### AI Service
+
+- Runtime: python
+- Framework: fastapi
+- AI: langchain, langgraph
+- Vector Store: chromadb
+
+### Communication
+
+- Message Broker: redis pub/sub (backend <-> python-ai)
 
 ### Authentication
 
@@ -50,6 +67,13 @@ QueryPDF/
 │   ├── api/         # API layer
 │   ├── auth/        # Authentication
 │   └── db/          # Database schema
+├── python-ai/       # AI service (FastAPI)
+│   ├── app/         # FastAPI application
+│   │   ├── services/  # Service layer
+│   │   └── graph/     # LangGraph graphs
+│   ├── requirements.txt
+│   └── Dockerfile
+└── docker-compose.yml
 ```
 
 ## Common Commands

@@ -1,0 +1,36 @@
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  redis:
+    image: redis:7
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+
+  server:
+    image: node:20-alpine
+    build: ./apps/server
+    environment:
+      - REDIS_URL=redis://redis:6379
+      - MONGO_URL=mongodb://mongo:27017
+    depends_on:
+      - mongo
+      - redis
+    # ponytail: placeholder, no apps/server Dockerfile yet
+
+  python-ai:
+    build: ./python-ai
+    environment:
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - redis
+    # ponytail: placeholder, no app code yet
+
+volumes:
+  mongo-data:
