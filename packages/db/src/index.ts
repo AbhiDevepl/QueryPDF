@@ -8,3 +8,4 @@ await mongoose.connect(env.DATABASE_URL).catch((error) => {
 const client = mongoose.connection.getClient().db("myDB");
 
 export { client };
+export { User, Document, Chat } from "./models/query.model";
