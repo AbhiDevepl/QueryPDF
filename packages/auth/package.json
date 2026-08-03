@@ -1,0 +1,29 @@
+{
+  "name": "@QueryPDF/auth",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@QueryPDF/db": "workspace:*",
+    "@QueryPDF/env": "workspace:*",
+    "@better-auth/mongo-adapter": "^1.6.22",
+    "better-auth": "catalog:",
+    "dotenv": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@QueryPDF/config": "workspace:*",
+    "typescript": "^6.0.3"
+  }
+}

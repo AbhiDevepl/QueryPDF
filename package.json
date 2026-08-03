@@ -1,0 +1,43 @@
+{
+  "name": "QueryPDF",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "check-types": "turbo check-types",
+    "dev:web": "turbo -F web dev",
+    "dev:server": "turbo -F server dev",
+    "test": "pnpm --filter web test && pnpm --filter server test && pnpm --filter @QueryPDF/api test",
+    "lint:eslint": "eslint .",
+    "format:prettier": "prettier --write .",
+    "format:prettier:check": "prettier --check ."
+  },
+  "dependencies": {
+    "@QueryPDF/env": "workspace:*",
+    "dotenv": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@QueryPDF/config": "workspace:*",
+    "@eslint/js": "^10.0.1",
+    "@types/node": "catalog:",
+    "eslint": "^10.8.0",
+    "globals": "^17.7.0",
+    "prettier": "^3.9.6",
+    "turbo": "^2.10.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.65.0",
+    "vercel": "^54.18.2"
+  },
+  "packageManager": "pnpm@10.33.0",
+  "pnpm": {
+    "overrides": {
+      "kysely": "0.28.17"
+    }
+  }
+}

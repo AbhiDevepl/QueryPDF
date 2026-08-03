@@ -1,0 +1,36 @@
+{
+  "name": "@QueryPDF/api",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@QueryPDF/auth": "workspace:*",
+    "@QueryPDF/db": "workspace:*",
+    "@QueryPDF/env": "workspace:*",
+    "@trpc/client": "catalog:",
+    "@trpc/server": "catalog:",
+    "better-auth": "catalog:",
+    "dotenv": "catalog:",
+    "effect": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@QueryPDF/config": "workspace:*",
+    "@types/express": "catalog:",
+    "@vitest/coverage-v8": "catalog:",
+    "@vitest/ui": "catalog:",
+    "jsdom": "catalog:",
+    "typescript": "^6.0.3",
+    "vitest": "catalog:"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "@QueryPDF/db",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@QueryPDF/env": "workspace:*",
+    "dotenv": "catalog:",
+    "mongoose": "^9.8.0",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@QueryPDF/config": "workspace:*",
+    "typescript": "^6.0.3"
+  }
+}
