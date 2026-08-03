@@ -33,6 +33,7 @@ const chatSchema = new Schema(
     answer: { type: String, required: true },
     sourceDocument: { type: String },
     sourcePage: { type: Number },
+    suggestedQuestions: [{ type: String }],
     timestamp: { type: Date, default: Date.now },
   },
   { collection: "chat" },
