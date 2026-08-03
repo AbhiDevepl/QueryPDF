@@ -48,3 +48,7 @@ coverage
 .cache
 tmp
 temp
+
+# python-ai
+python-ai/.venv
+python-ai/chroma_data
